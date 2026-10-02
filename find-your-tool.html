@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find your tool: 30-second quiz | The Tool Shed</title>
+<meta name="description" content="Three questions, one honest recommendation. Find which Tool Shed guide fits where you're starting from.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3CCH0VWGCF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3CCH0VWGCF');
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt="" width="28" height="28">The <span>Tool Shed</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="start-here.html">Start Here</a>
+      <a href="products/index.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="find-your-tool.html">Quiz</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Find your tool.</h1>
+  <p class="lede">Three questions. One honest recommendation. Takes about 30 seconds.</p>
+
+  <div class="quiz" id="quiz">
+    <noscript>
+      <p>This quiz needs JavaScript. The short version: starting from zero? Get the <a href="products/ai-remote-income-starter-kit.html">Starter Kit</a> ($9.99). Want the whole shelf? Get the <a href="products/sleeper-bunk-operator-pack.html">Bunk Pack</a> ($99). Making videos? Get the <a href="products/amazon-affiliate-videos-guide.html">Affiliate Videos Guide</a> ($14.99).</p>
+    </noscript>
+  </div>
+
+  <div class="honest">
+    <strong>The honest bit</strong>
+    This quiz matches you to a guide based on your answers. It is not a diagnosis and it will not tell you what you want to hear. If none of the guides fit, the <a href="start-here.html">free checklist</a> is still free.
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <h3>Get the free checklist</h3>
+    <p>Five checks to run before you publish a product video. One email, then a few useful ones.</p>
+    <p><a class="btn" href="start-here.html">Send me the checklist</a></p>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="start-here.html">Start Here</a>
+      <a href="products/index.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="find-your-tool.html">Quiz</a>
+    </nav>
+    <p class="fine">Checkout is handled securely by Payhip. Instant download after payment.<br>&copy; 2026 The Tool Shed.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var box = document.getElementById('quiz');
+  if (!box) return;
+
+  var QUESTIONS = [
+    { q: 'Where are you starting from?',
+      opts: [
+        { t: 'From zero. I have never earned money online.', p: 'starter' },
+        { t: 'I have posted content before. I want it to pay.', p: 'videos' },
+        { t: 'I am already selling something. I need systems.', p: 'bunk' }
+      ] },
+    { q: 'How do you work best?',
+      opts: [
+        { t: 'Short windows, phone in hand, between jobs.', p: 'starter' },
+        { t: 'I can film and edit a little.', p: 'videos' },
+        { t: 'I want the whole machine running at once.', p: 'bunk' }
+      ] },
+    { q: 'What appeals to you most?',
+      opts: [
+        { t: 'Using AI tools for remote work.', p: 'starter' },
+        { t: 'Making faceless product videos.', p: 'videos' },
+        { t: 'The full bundle, everything in one download.', p: 'bunk' }
+      ] }
+  ];
+
+  var PRODUCTS = {
+    starter: {
+      name: 'AI Remote Income Starter Kit', price: '$9.99',
+      url: 'https://payhip.com/b/oij4x',
+      page: 'products/ai-remote-income-starter-kit.html',
+      blurb: 'A 34-page workbook that walks you from zero to one testable offer.',
+      img: 'assets/img/cover-starter-kit.webp',
+      alt: 'Starter Kit cover: laptop, phone and notebook on a workbench at night'
+    },
+    bunk: {
+      name: 'Sleeper Bunk Operator Pack', price: '$99.00',
+      url: 'https://payhip.com/b/D5vb7',
+      page: 'products/sleeper-bunk-operator-pack.html',
+      blurb: 'Ten kits plus the planning sheets that tie them together. Built for short online windows.',
+      img: 'assets/img/cover-bunk-pack.webp',
+      alt: 'Bunk Pack cover: an open kit crate of tools on a workbench at night'
+    },
+    videos: {
+      name: 'Amazon Affiliate Videos Guide', price: '$14.99',
+      url: 'https://payhip.com/b/xlSp3',
+      page: 'products/amazon-affiliate-videos-guide.html',
+      blurb: 'Set up your Associates account and make your first faceless video. 20 prompts included.',
+      img: 'assets/img/cover-videos-guide.webp',
+      alt: 'Videos Guide cover: a phone on a tripod filming a product at night'
+    }
+  };
+
+  var step = 0;
+  var score = { starter: 0, videos: 0, bunk: 0 };
+
+  function renderQuestion() {
+    var q = QUESTIONS[step];
+    var html = '<p class="quiz-progress">Question ' + (step + 1) + ' of ' + QUESTIONS.length + '</p>';
+    html += '<h3 style="margin-top:0;">' + q.q + '</h3>';
+    q.opts.forEach(function (o, i) {
+      html += '<button type="button" class="quiz-opt" data-i="' + i + '">' + o.t + '</button>';
+    });
+    box.innerHTML = html;
+    box.querySelectorAll('.quiz-opt').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        score[q.opts[parseInt(btn.getAttribute('data-i'), 10)].p] += 1;
+        step += 1;
+        if (step < QUESTIONS.length) { renderQuestion(); }
+        else { renderResult(); }
+      });
+    });
+  }
+
+  function winner() {
+    var order = ['starter', 'videos', 'bunk'];
+    var best = 'starter', bestN = -1;
+    order.forEach(function (k) {
+      if (score[k] > bestN) { best = k; bestN = score[k]; }
+    });
+    return best;
+  }
+
+  function renderResult() {
+    var r = PRODUCTS[winner()];
+    box.innerHTML =
+      '<div class="quiz-result">' +
+      '<p class="quiz-progress">Your tool:</p>' +
+      '<div class="card card-product">' +
+      '<img class="card-thumb" src="' + r.img + '" alt="' + r.alt + '" loading="lazy" width="1344" height="1792">' +
+      '<div>' +
+      '<h3 style="margin-top:0;">' + r.name + '</h3>' +
+      '<p class="price">' + r.price + '</p>' +
+      '<p>' + r.blurb + '</p>' +
+      '<p><a class="btn" href="' + r.url + '" target="_blank" rel="noopener">Buy now: ' + r.price + '</a></p>' +
+      '<p><a href="' + r.page + '">See what is inside</a></p>' +
+      '</div></div>' +
+      '<p>Not ready to buy? <a href="start-here.html">Grab the free checklist</a> first. It costs nothing and shows you how these guides think.</p>' +
+      '<p><button type="button" class="btn btn-secondary" id="quiz-restart">Retake the quiz</button></p>' +
+      '</div>';
+    document.getElementById('quiz-restart').addEventListener('click', function () {
+      step = 0;
+      score = { starter: 0, videos: 0, bunk: 0 };
+      renderQuestion();
+    });
+  }
+
+  renderQuestion();
+})();
+</script>
+<script src="assets/main.js" defer></script>
+
+</body>
+</html>
