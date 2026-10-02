@@ -1,4 +1,4 @@
-# The AI Tool Shed: theaitoolshed.work
+# The Tool Shed: thetoolshed.work
 
 Static funnel-hub website. Plain HTML + one CSS file. No build step, no framework,
 no JavaScript libraries. Deploys to Netlify with zero config.
@@ -40,10 +40,10 @@ Checkout stays on Payhip. Every buy button links to the product's Payhip page.
    browser, print to PDF, and upload that file as the Kit form's download / incentive email.
 3. **Load the welcome sequence.** Copy the 4 emails from `email/welcome-sequence.md`
    into a Kit sequence, in order, one per day.
-4. **Point the DNS.** At launch, point theaitoolshed.work at Netlify (Netlify's domain
+4. **Point the DNS.** At launch, point thetoolshed.work at Netlify (Netlify's domain
    settings walk through this: add the domain, then update DNS at the registrar).
 5. **Blog migration (later).** Move posts from sleeper-income.blogspot.com into
-   `/blog/` and map blog.theaitoolshed.work. The placeholder page is already in place.
+   `/blog/` and map blog.thetoolshed.work. The placeholder page is already in place.
 
 ## Voice rules (every word on the site follows these)
 

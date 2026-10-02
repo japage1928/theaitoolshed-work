@@ -1,4 +1,4 @@
-# Welcome Sequence: The AI Tool Shed
+# Welcome Sequence: The Tool Shed
 
 Four emails for new subscribers who downloaded the free Faceless Video Checklist.
 Send one per day, in order. Plain text. Signed as John.
