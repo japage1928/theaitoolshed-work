@@ -11,7 +11,7 @@ Send one per day, in order. Plain text. Signed as John.
 
 Hey,
 
-Here's the checklist: [link to the PDF]
+Here's the checklist: https://thetoolshed.work/lead-magnet/faceless-video-checklist.pdf
 
 Print it or keep it on your phone. Run every product video through it before you publish: the script check, disclosure, the link path, the Associate rules, and the boring production pass. Five minutes per video. It saves you from the dumb mistakes that get accounts flagged.
 
@@ -29,7 +29,7 @@ John
 
 Quick intro, since you just joined.
 
-I'm John. I'm an over-the-road truck driver. I make about $1,450 a week after taxes, and I'm building remote income on the side so I can get off the road for good.
+I'm John. I'm an over-the-road truck driver. The paycheck covers the bills and not much else, and I'm building remote income on the side so I can get off the road for good.
 
 I write these guides in short windows between runs. If a guide says something takes an hour, it's because it took me an hour. I don't write about things I haven't done myself, and I don't make promises about money. Nobody can promise you income, and anyone who does is selling something.
 
