@@ -9,4 +9,5 @@
   <url><loc>https://thetoolshed.work/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thetoolshed.work/find-your-tool.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thetoolshed.work/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thetoolshed.work/blog/how-to-use-claude-beginners-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
