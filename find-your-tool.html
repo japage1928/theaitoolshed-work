@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Find your tool: 30-second quiz | The Tool Shed</title>
 <meta name="description" content="Three questions, one honest recommendation. Find which Tool Shed guide fits where you're starting from.">
-<link rel="stylesheet" href="assets/style.css?v=5dc9ec1">
+<link rel="stylesheet" href="assets/style.css?v=20261003b">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CCH0VWGCF"></script>
@@ -22,7 +22,8 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt="" width="28" height="28">The <span>Tool Shed</span></a>
-    <nav class="main-nav">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="site-nav">
       <a href="index.html">Home</a>
       <a href="start-here.html">Start Here</a>
       <a href="products/index.html">Products</a>
@@ -178,7 +179,7 @@
   renderQuestion();
 })();
 </script>
-<script src="assets/main.js?v=5dc9ec1" defer></script>
+<script src="assets/main.js?v=20261003b" defer></script>
 
 </body>
 </html>
