@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Tool Directory: 21 tools, honest takes | The Tool Shed</title>
+<meta name="description" content="21 AI tools for writing, images, video, audio, research, and productivity — with honest pricing, best-for picks, and no hype.">
+<link rel="stylesheet" href="assets/style.css?v=20261003c">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3CCH0VWGCF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3CCH0VWGCF');
+</script>
+<style>
+  .filters { display:flex; flex-wrap:wrap; gap:0.5rem; margin:1.25rem 0 0.5rem; }
+  .filters button {
+    background: var(--card); border:1px solid var(--line); color: var(--text);
+    border-radius: 2rem; padding: 0.45rem 1rem; font-size: 0.9rem; cursor: pointer;
+    font-family: inherit;
+  }
+  .filters button.on { background: var(--accent); border-color: var(--accent); color: #161411; font-weight: 700; }
+  .tool-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
+  .tool-card {
+    background: var(--card); border:1px solid var(--line); border-radius:0.75rem;
+    padding:1.25rem; display:flex; flex-direction:column; gap:0.5rem;
+  }
+  .tool-card .cat {
+    display:inline-block; align-self:flex-start; font-size:0.72rem; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase; color: var(--accent);
+    border:1px solid var(--accent); border-radius:2rem; padding:0.15rem 0.65rem;
+  }
+  .tool-card h3 { margin:0; font-size:1.15rem; }
+  .tool-card h3 a { color: var(--text); text-decoration:none; }
+  .tool-card h3 a:hover { color: var(--accent); }
+  .tool-card .verdict { color: var(--muted); font-style: italic; margin:0; }
+  .tool-card .row { margin:0; font-size:0.92rem; }
+  .tool-card .row strong { color: var(--text); }
+  .tool-card .price { font-size:1rem; }
+  .tool-card ul { margin:0.25rem 0; padding-left:1.1rem; font-size:0.9rem; color: var(--muted); }
+  .tool-card .take { font-size:0.9rem; border-left:3px solid var(--accent); padding-left:0.6rem; margin:0.25rem 0; }
+  .tool-card .pair { font-size:0.85rem; margin:0; }
+  .tool-card .visit { margin-top:auto; padding-top:0.5rem; }
+  .tool-card .visit a { display:inline-block; }
+  .count-note { color: var(--muted); font-size:0.9rem; }
+  .carousel-wrap { display:flex; align-items:stretch; gap:0.5rem; margin:1rem 0 0.25rem; }
+  .carousel {
+    display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch; scrollbar-width:thin; flex:1; min-width:0;
+    padding:0.25rem 0.1rem 0.75rem;
+  }
+  .carousel .tool-card { min-width:270px; max-width:300px; scroll-snap-align:start; margin:0; }
+  .car-btn {
+    flex:0 0 auto; align-self:center; width:2.5rem; height:2.5rem; border-radius:50%;
+    background:var(--card); border:1px solid var(--line); color:var(--text);
+    font-size:1.4rem; line-height:1; cursor:pointer; font-family:inherit;
+  }
+  .car-btn:hover { border-color:var(--accent); color:var(--accent); }
+  @media (max-width: 640px){ .tool-grid { grid-template-columns: 1fr; } .car-btn { display:none; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo.svg" alt="" width="28" height="28">The <span>Tool Shed</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav" id="site-nav">
+      <a href="index.html">Home</a>
+      <a href="start-here.html">Start Here</a>
+      <a href="products/index.html">Products</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="find-your-tool.html">Quiz</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>The AI tool directory.</h1>
+  <p class="lede">21 tools worth knowing, with honest pricing and plain-English takes. No sponsored placements, no hype — if a tool is overpriced or half-baked, it says so on the card.</p>
+
+  <h2>Featured tools</h2>
+  <div class="carousel-wrap">
+    <button class="car-btn" id="car-prev" aria-label="Previous tools">&#8249;</button>
+    <div class="carousel" id="carousel"></div>
+    <button class="car-btn" id="car-next" aria-label="Next tools">&#8250;</button>
+  </div>
+
+  <h2>Browse them all</h2>
+  <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
+  <p class="count-note" id="count-note"></p>
+
+  <div class="tool-grid" id="directory">
+    <noscript>
+      <p>Enable JavaScript to browse the directory, or start with the short list: ChatGPT for writing, Midjourney for images, Pictory for faceless video, ElevenLabs for voiceovers, Perplexity for research.</p>
+    </noscript>
+  </div>
+
+  <div class="honest">
+    <strong>The honest bit</strong>
+    Prices were checked in October 2026 and change often — confirm on the tool's site before you pay. "Free tier" means genuinely usable, not a 3-day trial with your card on file. None of these placements are paid.
+  </div>
+
+  <h2>Want the workflows, not just the tools?</h2>
+  <p>Knowing the tools is step one. Using them to make something that earns is the whole game. The guides below show the exact workflows — which tool, which settings, in what order.</p>
+  <div class="cta-row">
+    <a class="btn" href="products/ai-remote-income-starter-kit.html">Starter Kit — $9.99</a>
+    <a class="btn btn-secondary" href="products/amazon-affiliate-videos-guide.html">Affiliate Videos Guide — $14.99</a>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <h3>Get the free checklist</h3>
+    <p>Five checks to run before you publish a product video. One email, then a few useful ones.</p>
+    <p><a class="btn" href="start-here.html">Send me the checklist</a></p>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="start-here.html">Start Here</a>
+      <a href="products/index.html">Products</a>
+      <a href="tools.html">Tools</a>
+      <a href="about.html">About</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="find-your-tool.html">Quiz</a>
+    </nav>
+    <p class="fine">Checkout is handled securely by Payhip. Instant download after payment.<br>&copy; 2026 The Tool Shed.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var CATS = ["All","Writing","Image","Video","Audio","Research","Productivity"];
+  var TOOLS = [
+    { name:"ChatGPT", url:"https://chat.openai.com", cat:"Writing",
+      verdict:"The one everyone means when they say AI.",
+      best:"Everyday writing, brainstorming, coding help",
+      price:"Free / Plus $20/mo",
+      feats:["GPT-4o model","Voice mode","Image generation built in","Custom GPTs"],
+      take:"Start here if you are new. The free tier handles most of what a beginner needs.",
+      pair:["AI Remote Income Starter Kit","products/ai-remote-income-starter-kit.html"] },
+    { name:"Claude", url:"https://claude.ai", cat:"Writing",
+      verdict:"The careful writer.",
+      best:"Long-form writing, nuanced reasoning",
+      price:"Free / Pro $20/mo",
+      feats:["Long context window","Strong writing quality","Projects for organizing work"],
+      take:"Writes more like a person than most. My pick for anything long." },
+    { name:"Jasper", url:"https://www.jasper.ai", cat:"Writing",
+      verdict:"The marketing team's workhorse.",
+      best:"Brand-voice marketing copy at volume",
+      price:"From $39/mo",
+      feats:["Brand voice training","Campaign workflows","Team collaboration"],
+      take:"Priced for businesses, not hobbyists. Skip unless you publish at volume." },
+    { name:"Grammarly", url:"https://www.grammarly.com", cat:"Writing",
+      verdict:"The cleanup crew.",
+      best:"Proofreading, tone fixes",
+      price:"Free / Pro $12/mo",
+      feats:["Grammar and spelling","Tone rewrite suggestions","Plagiarism checker"],
+      take:"The free tier catches most mistakes. Pro is for people who write for a living." },
+    { name:"Midjourney", url:"https://www.midjourney.com", cat:"Image",
+      verdict:"The art monster.",
+      best:"Striking images, thumbnails, covers",
+      price:"From $10/mo",
+      feats:["Best-in-class aesthetics","Upscaling and variations","Style references"],
+      take:"Still the prettiest outputs. Runs through Discord, which is weird until it isn't." },
+    { name:"DALL-E 3", url:"https://chat.openai.com", cat:"Image",
+      verdict:"The convenient one.",
+      best:"Quick images without leaving chat",
+      price:"Included with ChatGPT Plus ($20/mo)",
+      feats:["In-chat generation","Follows prompts well","No separate signup"],
+      take:"Not the best image model, but it is right there in the chat window." },
+    { name:"Leonardo AI", url:"https://leonardo.ai", cat:"Image",
+      verdict:"The practical artist.",
+      best:"Game assets, product mockups",
+      price:"Free tier / from $12/mo",
+      feats:["Fine-tuned models","Canvas editor","Transparent PNG output"],
+      take:"Generous free tier. Good when you need control, not just vibes." },
+    { name:"Canva Magic Studio", url:"https://www.canva.com", cat:"Image",
+      verdict:"Design for non-designers.",
+      best:"Social graphics, thumbnails, quick layouts",
+      price:"Free / Pro $15/mo",
+      feats:["Templates for everything","Background remover","Magic Write text tools"],
+      take:"You already know Canva. The AI features just remove the tedious parts." },
+    { name:"Runway", url:"https://runwayml.com", cat:"Video",
+      verdict:"Hollywood's toy box.",
+      best:"Text-to-video clips, creative effects",
+      price:"Free tier (125 credits) / Standard $15/mo",
+      feats:["Gen-4 video model","Inpainting and outpainting","4K upscaling"],
+      take:"Powerful and priced like it. Credits burn fast — watch the meter." },
+    { name:"Pictory", url:"https://pictory.ai", cat:"Video",
+      verdict:"Script to video, fast.",
+      best:"Faceless videos from scripts",
+      price:"From $25/mo (annual)",
+      feats:["Script-to-video","Auto captions","AI voiceovers"],
+      take:"This is the workflow the Affiliate Videos guide is built around. Does exactly what it says.",
+      pair:["Amazon Affiliate Videos Guide","products/amazon-affiliate-videos-guide.html"] },
+    { name:"InVideo", url:"https://invideo.io", cat:"Video",
+      verdict:"The marketer's shortcut.",
+      best:"Promo and ad videos",
+      price:"From ~$9/mo",
+      feats:["Prompt-to-video","Stock media library","AI voiceover"],
+      take:"Cheap entry, decent output. Fine for cranking out promos." },
+    { name:"CapCut", url:"https://www.capcut.com", cat:"Video",
+      verdict:"Free and shockingly good.",
+      best:"Phone editing, social clips",
+      price:"Free / Pro tier",
+      feats:["Auto captions","Effects and templates","Direct TikTok publishing"],
+      take:"Start here before paying for anything. The free tier embarrasses paid editors.",
+      pair:["Amazon Affiliate Videos Guide","products/amazon-affiliate-videos-guide.html"] },
+    { name:"Descript", url:"https://www.descript.com", cat:"Video",
+      verdict:"Edit video like a doc.",
+      best:"Talking-head video, podcasts",
+      price:"Free / Hobbyist $24/mo ($16 annual)",
+      feats:["Text-based editing","Overdub voice cloning","Studio Sound cleanup"],
+      take:"Delete a sentence from the transcript and it is gone from the video. Feels like cheating." },
+    { name:"HeyGen", url:"https://www.heygen.com", cat:"Video",
+      verdict:"The avatar presenter.",
+      best:"Spokesperson videos at scale",
+      price:"Free (3 videos/mo) / Creator $29/mo ($24 annual)",
+      feats:["AI avatars","175+ languages","Video translation"],
+      take:"Creepy-good avatars. Great for faceless channels that want a face." },
+    { name:"ElevenLabs", url:"https://elevenlabs.io", cat:"Audio",
+      verdict:"Voices that don't sound robotic.",
+      best:"Voiceovers, narration",
+      price:"Free / Starter $5/mo",
+      feats:["Natural text-to-speech","Voice cloning","29 languages"],
+      take:"The voice tool behind half the faceless channels you watch.",
+      pair:["Amazon Affiliate Videos Guide","products/amazon-affiliate-videos-guide.html"] },
+    { name:"Murf", url:"https://murf.ai", cat:"Audio",
+      verdict:"The studio booth.",
+      best:"Professional voiceovers",
+      price:"Free / from ~$19/mo",
+      feats:["120+ voices","Studio-style editor","Commercial licenses"],
+      take:"Solid runner-up to ElevenLabs. Try both free tiers and pick the voice you like." },
+    { name:"Perplexity", url:"https://www.perplexity.ai", cat:"Research",
+      verdict:"Google with receipts.",
+      best:"Research with cited sources",
+      price:"Free / Pro $20/mo",
+      feats:["Sourced answers","Deep research mode","File analysis"],
+      take:"My first stop for research. It shows its work, which is the whole point." },
+    { name:"Gemini", url:"https://gemini.google.com", cat:"Research",
+      verdict:"The Google one.",
+      best:"Workspace users, multimodal research",
+      price:"Free / AI Pro $20/mo",
+      feats:["Deep Research","Gmail and Docs integration","Large context"],
+      take:"If you live in Gmail and Docs, this one is already where you work." },
+    { name:"Grok", url:"https://grok.com", cat:"Research",
+      verdict:"The fast, unfiltered one.",
+      best:"Real-time info, X users",
+      price:"Free tier / SuperGrok $30/mo",
+      feats:["Real-time X data","Image generation","Voice mode"],
+      take:"I pay for SuperGrok. Fast, funny, and knows what is happening right now." },
+    { name:"Notion AI", url:"https://www.notion.so", cat:"Productivity",
+      verdict:"Your notes, smarter.",
+      best:"Docs, wikis, summaries",
+      price:"$10/mo add-on",
+      feats:["Summaries","Autofill tables","Q&A over your docs"],
+      take:"Worth it only if you already live in Notion. Otherwise skip." },
+    { name:"Zapier", url:"https://zapier.com", cat:"Productivity",
+      verdict:"The boring-work killer.",
+      best:"Automating repetitive tasks",
+      price:"Free / from ~$20/mo",
+      feats:["7,000+ app integrations","AI agents","Multi-step workflows"],
+      take:"My rule: automate once, never do it twice. This is the tool for that." }
+  ];
+
+  var grid = document.getElementById('directory');
+  var filterBox = document.getElementById('filters');
+  var countNote = document.getElementById('count-note');
+  var active = "All";
+
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+
+  function card(t){
+    var h = '<div class="tool-card" data-cat="'+t.cat+'">';
+    h += '<span class="cat">'+t.cat+'</span>';
+    h += '<h3><a href="'+t.url+'" target="_blank" rel="noopener sponsored">'+esc(t.name)+'</a></h3>';
+    h += '<p class="verdict">'+esc(t.verdict)+'</p>';
+    h += '<p class="row"><strong>Best for:</strong> '+esc(t.best)+'</p>';
+    h += '<p class="row price">'+esc(t.price)+'</p>';
+    h += '<ul>';
+    for (var i=0;i<t.feats.length;i++) h += '<li>'+esc(t.feats[i])+'</li>';
+    h += '</ul>';
+    h += '<p class="take">'+esc(t.take)+'</p>';
+    if (t.pair) h += '<p class="pair">Pair with: <a href="'+t.pair[1]+'">'+esc(t.pair[0])+'</a></p>';
+    h += '<p class="visit"><a class="btn btn-secondary" href="'+t.url+'" target="_blank" rel="noopener sponsored">Visit '+esc(t.name)+'</a></p>';
+    h += '</div>';
+    return h;
+  }
+
+  function render(){
+    var h = '', n = 0;
+    for (var i=0;i<TOOLS.length;i++){
+      if (active==="All" || TOOLS[i].cat===active){ h += card(TOOLS[i]); n++; }
+    }
+    grid.innerHTML = h;
+    countNote.textContent = "Showing "+n+" of "+TOOLS.length+" tools.";
+  }
+
+  for (var c=0;c<CATS.length;c++){
+    (function(cat){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = cat;
+      if (cat==="All") b.className = 'on';
+      b.addEventListener('click', function(){
+        active = cat;
+        var btns = filterBox.querySelectorAll('button');
+        for (var i=0;i<btns.length;i++) btns[i].className = '';
+        b.className = 'on';
+        render();
+      });
+      filterBox.appendChild(b);
+    })(CATS[c]);
+  }
+  render();
+
+  // featured carousel
+  var FEATURED = ["ChatGPT","Midjourney","Pictory","ElevenLabs","Perplexity","CapCut"];
+  var car = document.getElementById('carousel');
+  var ch = '';
+  for (var f=0;f<FEATURED.length;f++){
+    for (var t=0;t<TOOLS.length;t++){
+      if (TOOLS[t].name===FEATURED[f]){ ch += card(TOOLS[t]); break; }
+    }
+  }
+  car.innerHTML = ch;
+  function carScroll(dir){
+    var first = car.querySelector('.tool-card');
+    var w = first ? first.offsetWidth + 16 : 300;
+    car.scrollBy({ left: dir*w, behavior:'smooth' });
+  }
+  document.getElementById('car-prev').addEventListener('click', function(){ carScroll(-1); });
+  document.getElementById('car-next').addEventListener('click', function(){ carScroll(1); });
+})();
+</script>
+<script src="assets/main.js?v=20261003c" defer></script>
+</body>
+</html>
